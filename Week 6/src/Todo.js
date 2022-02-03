@@ -12,10 +12,14 @@ function Todo({ todo, comp, del, edit }) {
     };
 
     const onSubmitEdit = (e) => {
-        e.preventDefault();
-        edit(input, todo.id);
-        setInput('');
-        setEditToggle((prevToggle) => !prevToggle);
+        if (input == ''){
+            alert('Todo can not be empty!')
+        } else {
+            e.preventDefault();
+            edit(input, todo.id);
+            setInput('');
+            setEditToggle((prevToggle) => !prevToggle);
+        };
     };
 
     const onCancel = (e) => {
